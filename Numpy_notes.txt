@@ -1,0 +1,11 @@
+1.The Numpy is fundamental module to do data nalysis in python
+2.we can install numpy by using pip install 
+import numpy as np
+Feature	Python List	NumPy Array
+Performance	Slower for numerical operations	Much faster due to optimized C-based implementation
+Memory Usage	Higher	Lower (more compact storage)
+Functionality	Basic operations	Rich set of mathematical, statistical, and linear algebra functions
+Element-wise Operations	Manual loops needed	Supports vectorized operations (e.g., arr1 + arr2)
+Data Type	Can hold mixed types	Homogeneous (all elements are of the same type)
+Broadcasting	Not supported	Supported (e.g., adding a scalar to an array)
+Multidimensional Support	Limited (nested lists)	Full support for multi-dimensional arrays (matrices, tensors)

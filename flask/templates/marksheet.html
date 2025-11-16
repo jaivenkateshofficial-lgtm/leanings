@@ -1,0 +1,19 @@
+<html>
+    <h1>This is you're  marksheet</h1>
+    <table border=2>
+        {%for key,value in data.items()%}
+        <tr>
+            <th>Rank</th>
+            <th>Result</th>
+            <th>mark</th>
+            <th>percentage</th>
+            <td>{{value}}</td>
+            <td>{{value}}</td>
+            <td>{{value}}</td>
+            <td>{{value}}</td>
+        </tr>
+        
+        
+        {%endfor%}
+    </table>
+</html>
