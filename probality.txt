@@ -1,0 +1,16 @@
+Additive rule
+mutual exclusive event
+head or tail it will happen one at the time
+a(h or t)=1/2+1/2=1
+non mutal execlusive
+a(K or heart )=a(k)+a(heart)-a(k amd heart)
+It is beacause we need to subract the two event  occur simentaniously
+
+Independent event:
+two events does't affect each other
+multiplication rule:p(h and  T)=p(h)*P(t)==1/2*/2=1/4
+
+dependent event:
+two event dependent on each other
+p(k or Q)=p(k)*p(Q/k)
+multip

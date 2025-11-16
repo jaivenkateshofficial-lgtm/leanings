@@ -1,0 +1,105 @@
+| **Aspect**            | **Process**                                                                         | **Thread**                                                                                                        | **Core**                                                                         |
+| --------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Definition**        | An independent program in execution with its own memory space and system resources. | A smaller unit of execution within a process; shares memory and resources with other threads of the same process. | A physical or logical CPU unit that executes instructions.                       |
+| **Memory**            | Has its own dedicated memory (address space).                                       | Shares memory with other threads in the same process.                                                             | Has access to shared system memory; may have private caches.                     |
+| **Communication**     | Inter-process communication (IPC) is slower and more complex.                       | Communication between threads is fast and easy since they share memory.                                           | Cores communicate through CPU caches or interconnects; slower than intra-thread. |
+| **Creation Overhead** | High — requires more system resources and time.                                     | Low — lightweight and quick to create.                                                                            | Not created by software; determined by hardware (CPU design).                    |
+| **Failure Impact**    | Failure of one process does not affect others.                                      | Failure of one thread can crash the entire process.                                                               | Hardware-level — a faulty core may affect performance of the system.             |
+| **Parallelism Level** | Enables multitasking (running multiple programs).                                   | Enables multithreading (parallel tasks within the same program).                                                  | Enables true hardware parallelism (multiple instructions run simultaneously).    |
+| **Example**           | Running Chrome and Word as separate apps.                                           | Each Chrome tab is a thread in the Chrome process.                                                                | A quad-core CPU has 4 cores that can run 4 threads at once.                      |
+| **Managed By**        | Operating System (OS scheduler).                                                    | Operating System and Process (user-level or kernel threads).                                                      | CPU hardware and firmware.                                                       |
+
+ What is a Process?
+A process is an independent program in execution.
+Each process has:
+
+
+Its own memory space
+
+
+Resources (like file handles, system variables)
+
+
+One or more threads running inside it
+
+
+Think of a process as a container for program execution.
+🧩 Example 1:
+When you open Google Chrome, your computer creates a Chrome process.
+Inside it, there are multiple subprocesses — for example:
+
+
+One process for the browser UI
+
+
+One process per tab
+
+
+One process for plugins (like video decoding)
+
+
+Each of these processes runs independently.
+If one tab crashes, others can still run — because each is its own process.
+🧩 Example 2:
+If you open MS Word and Spotify at the same time —
+you have two separate processes running.
+They don’t share memory or data directly.
+
+⚙️ What is a Thread?
+A thread is the smallest unit of execution inside a process.
+All threads inside the same process:
+
+
+Share the same memory and data
+
+
+Run independently and concurrently
+
+
+Threads are used to do multiple things at once within the same program.
+🧩 Example 1:
+In MS Word, you might have:
+One thread for typing input
+One thread for auto-save
+One thread for spell-check
+
+
+All these threads work together and share the same document data.
+🧩 Example 2 (Code Example):
+In Python:
+import threading
+import time
+
+def print_numbers():
+    for i in range(5):
+        print(f"Numbers: {i}")
+        time.sleep(1)
+
+def print_letters():
+    for c in 'ABCDE':
+        print(f"Letters: {c}")
+        time.sleep(1)
+
+# Both threads run in the same process
+t1 = threading.Thread(target=print_numbers)
+t2 = threading.Thread(target=print_letters)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+🧩 Output (interleaved):
+Numbers: 0
+Letters: A
+Numbers: 1
+Letters: B
+...
+
+Here, both functions run concurrently within the same process using threads.
+
+🧩 Summary
+ConceptDescriptionExampleProcessIndependent program with its own memoryOpening Chrome, Word, or SpotifyThreadSub-task within a process sharing memoryChrome tab, Word spell-check thread, Python thread
+
+Would you like me to include a real OS-level example (like how you can see processes and threads in Windows Task Manager)?
