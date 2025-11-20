@@ -14,3 +14,5 @@ df2['Y']=0
 df=df1.append(df2)
 x=df.iloc[:,2]
 y=df.Y
+
+# Need to check the diffrent kernel how to is converting to high dimention need to che
