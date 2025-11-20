@@ -74,3 +74,33 @@ r2_score(y_test,y_pred)
 # Lasso cv
 lcv=LassoCV(cv=5)
 lcv.fit(x_test_scalled,y_train)
+
+'''
+Linear Regression
+Use When: You have a dataset with no multicollinearity and you believe all the features are important.
+Limitation: Prone to overfitting, especially in high-dimensional spaces or when the number of features is close to or exceeds the number of samples.
+Ridge Regression
+Use When:
+The model has multicollinearity among features.
+You want to retain all features in the model, as ridge regression typically shrinks coefficients but does not eliminate any.
+You need to manage overfitting while keeping all potentially relevant variables.
+Feature Selection: No feature selection; it does not reduce coefficients to zero, thus keeping all variables in play.
+Lasso Regression
+Use When:
+You suspect that many features are irrelevant and you want to perform automatic feature selection.
+You have a high-dimensional dataset where you expect only a small number of features to be significant.
+You need to reduce overfitting by eliminating less important features, resulting in a simpler model.
+Feature Selection: Lasso can reduce some coefficients exactly to zero, thus effectively eliminating less important features.
+Elastic Net Regression
+Use When: You have a dataset with high dimensionality and multicollinearity, combining the benefits of both ridge and lasso. It allows for both feature selection and retention of all features.
+Combination of Ridge and Lasso: By balancing between L1 and L2 regularization, elastic net can handle datasets that are problematic for lasso alone (e.g., when groups of features are correlated).
+Summary
+Choose linear regression for simple cases with no multicollinearity.
+Use ridge regression when retaining all features is important, particularly in the presence of multicollinearity.
+Opt for lasso regression for feature selection and simplification in cases of irrelevant features.
+Select elastic net regression when you want the advantages of both ridge and lasso together.
+If you have any specific scenarios or datasets in mind, feel free to share for more tailored advice!
+
+Was this content relevant to you?
+No file chosen
+'''
