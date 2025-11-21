@@ -38,6 +38,7 @@ rg=Ridge()
 rg.fit(x_train,y_train)
 y_pred=rg.predict(x_test)
 mse=mean_squared_error(y_test,y_pred)
+mae=mean_absolute_error(y_test,y_pred)
 
 
 
