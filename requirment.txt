@@ -11,3 +11,4 @@ imblearn
 openpyxl
 statsmodels
 pipelining
+xgboost
