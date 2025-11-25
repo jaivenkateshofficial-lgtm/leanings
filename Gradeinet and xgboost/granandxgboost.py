@@ -19,7 +19,7 @@ df['HS']=df['HS'].str.strip('*')
 df['HS']=df['HS'].astype(int)
 df['Mat']=df['Mat'].str.strip('*')
 df['Mat']=df['Mat'].astype(int)
-df.drop('NO',axis=1,inplace=True)
+df.drop('NO',axis=1,inplace=True) 
 
 # Selscting the independent and dependent variable
 x=df.drop(['Runs'],axis=1)
