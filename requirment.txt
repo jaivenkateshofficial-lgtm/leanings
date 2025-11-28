@@ -12,3 +12,6 @@ openpyxl
 statsmodels
 pipelining
 xgboost
+lxml
+html5lib
+kneed
